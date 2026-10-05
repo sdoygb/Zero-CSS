@@ -20,10 +20,15 @@
 
 **物理比特 = 边**：每条边 $`e\in E`$ 一个量子比特，$`n:=|E|`$，$`\mathcal H=(\mathbb C^2)^{\otimes E}`$。
 
+$$
 H_X\in\mathbb F_2^{V\times E},　 H_X[v,e]=1\iff v\in e
 \qquad（X 型稳定子：顶点星形）
 H_Z\in\mathbb F_2^{F\times E},　 H_Z[f,e]=1\iff e\in\partial f
+$$
+
+$$
 \qquad（Z 型稳定子：面边界）
+$$
 
 $$
 S_X=\text{rowspace}(H_X),\qquad S_Z=\text{rowspace}(H_Z).
@@ -124,7 +129,10 @@ $`k=\beta\_1-rank(H\_Z)=\dim Z\_1/im\delta\_F=\dim\text{coker}\delta\_F`$（连�
 
 **三式互校**（`dim ker H_Z − r_X`、`dim ker H_X − r_Z`、`E−r_X−r_Z`）在全部 8 例上**一致**。
 
-\Longrightarrow 环面族 = [[2L^2, 2, L]] （即标准 toric code）;\qquad
+$$
+\Longrightarrow\ \text{环面族} = [ 2L^2,\ 2,\ L ]\quad(\text{即标准 toric code});
+$$
+
 平面族 k=0 （无逻辑比特）.
 
 ### 3.2 (ii) 距离 $`d`$
@@ -136,7 +144,14 @@ $`k=\beta\_1-rank(H\_Z)=\dim Z\_1/im\delta\_F=\dim\text{coker}\delta\_F`$（连�
 | 环面 5×5 | 枚举超限 | 枚举超限 | — | 5 | 5 |
 
 **结论（实测）**：环面族
+
+$$
+$$
+
+$$
 d_X=(最短非平凡圈长)=girth=L,\qquad d_Z=(最小分离割)=L,\qquad d=L .
+$$
+
 平面族：$`k=0`$ ⇒ 无逻辑算符 ⇒ $`d`$ **无定义**（不是 $`0`$ 也不是 $`\infty`$）。
 
 **部分证明**：
@@ -168,6 +183,11 @@ d_X=(最短非平凡圈长)=girth=L,\qquad d_Z=(最小分离割)=L,\qquad d=L .
 
 **(ii)** 物理比特数 $`n=E`$（每条边一个）；逻辑量子比特数
 
+$$
+$$
+
+$$
 k=E-r_X-r_Z=\beta_1-\text{rank}(H_Z)　(连通，已证).
+$$
 
 **(iii)** 环面胞腔化 $`\Rightarrow[ 2L^2,2,L ]`$（toric code）；平面胞腔化 $`\Rightarrow k=0`$。

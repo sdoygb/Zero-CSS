@@ -39,8 +39,13 @@ $$
 复形 $`K=(V,E,F)`$：$`V,E`$ 来自 Z0 的 $`(C,E)`$；面 = **Z0③ 的闭合词**。
 物理比特 = 边，$`n=E`$；$`H\_X`$ = 顶点-边关联，$`H\_Z`$ = 面-边关联。
 
+$$
 Z_1:=\ker H_X\subseteq\mathbb F_2^E (圈空间, \dim=\beta_1),\qquad
+$$
+
+$$
 \delta_F:\mathbb F_2^F\to\mathbb F_2^E, \text{im}\delta_F=\text{rowspace}(H_Z).
+$$
 
 **引理 4（已证）**：$`im\delta\_F\subseteq Z\_1`$。
 

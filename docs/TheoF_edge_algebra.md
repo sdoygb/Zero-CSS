@@ -30,8 +30,13 @@
 
 定义两个算子：
 
-F_e\,|w\rangle:=|w\oplus \mathbf e_e\rangle\qquad(**翻转：局域补偿移动** T_{ex**=x+e_j-e_i \text{的单坐标版本**)
-Z_e\,|w\rangle:=(-1)^{w_e**|w\rangle\qquad(**读取：Z0③ 计数的逐边读法**)
+$$
+F_e\,|w\rangle:=|w\oplus \mathbf e_e\rangle\qquad(\textbf{翻转：局域补偿移动}\ T_{e}=x+e_j-e_i\ \text{的单坐标版本})
+$$
+
+$$
+Z_e\,|w\rangle:=(-1)^{w_e}|w\rangle\qquad(\textbf{读取：Z0③ 计数的逐边读法})
+$$
 
 ---
 
@@ -110,7 +115,10 @@ $`\{I,\sigma\_x,\sigma\_z,\sigma\_x\sigma\_z\}`$（在"边 $`e`$ 自由、其余
 
 由 (F2)，$`F\_e,Z\_e`$ 都是**实**矩阵，反对易在 $`\mathbb R`$ 上已成立。
 故若只取**实**线性包 $`\mathbb R^\Omega`$，定理 F 的 (F1)–(F5) **全部成立**。
-\Longrightarrow **稳定子码（CSS）所需的全部代数结构，在实数域上已经闭合。**
+
+$$
+\Longrightarrow\ \textbf{稳定子码（CSS）所需的全部代数结构，在实数域上已经闭合。}
+$$
 
 ### 4.2 复化：需要 Zero 的两步既有成果
 
@@ -143,7 +151,9 @@ $`\{I,\sigma\_x,\sigma\_z,\sigma\_x\sigma\_z\}`$（在"边 $`e`$ 自由、其余
 | 张量积 $`(\mathbb C^2)^{\otimes E}`$ | ❌ 假设 | ✅ **导出**（F4：不同边对易 ＋ 维数 $`4^E`$） |
 | 面的选择规则 | 输入 | ⚠️ **仍是输入**（缺口 (c)） |
 
-\Longrightarrow \text{归属缺口：** **三处借用** \longrightarrow **仅剩一处** (\text{面的选择，缺口 (c)**) .
+$$
+\Longrightarrow\ \text{归属缺口：}\textbf{三处借用}\ \longrightarrow\ \textbf{仅剩一处}\ (\text{面的选择，缺口 (c)}) .
+$$
 
 ---
 

@@ -156,6 +156,39 @@ def e7_bracket_clash(lines):
     return out
 
 
+def e9_orphan_math(lines):
+    """**孤立数学行**：含 LaTeX 构造、却不在任何 $$ 块或 $...$ 内的行。
+
+    这类行会整段显示为原始 TeX。成因通常是编辑时丢失了 $$ 定界符，
+    或转换脚本误删。注意：仅靠"$$ 计数为偶数"**查不出来**，必须按行判定。
+    """
+    out = []
+    in_block = False
+    in_code = False
+    for i, l in enumerate(lines, 1):
+        if l.strip().startswith("```"):
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        if l.strip() == "$$":
+            in_block = not in_block
+            continue
+        if in_block or not l.strip():
+            continue
+        if l.lstrip().startswith(("|", "#", ">")):
+            continue
+        # 剥掉行内公式与行内代码
+        t = re.sub(r"\$`[^`\n]+`\$", "", l)
+        t = re.sub(r"\$[^$\n]+\$", "", t)
+        t = re.sub(r"`[^`]*`", "", t)
+        if re.search(r"\\[a-zA-Z]{2,}", t):
+            out.append((i, l.strip()[:70]))
+    if in_block:
+        out.append((len(lines), "存在未闭合的 $$ 块"))
+    return out
+
+
 def e5_table_columns(lines):
     """表格每行的 | 数必须一致（否则该行会被解析成额外列）。"""
     out = []
@@ -187,7 +220,7 @@ def main():
     for f in FILES:
         text = read(f)
         lines = text.split("\n")
-        r1, r2, r3, r4, r5, r6, r7_holder, r8_holder = (
+        r1, r2, r3, r4, r5, r6, r7_holder, r8_holder, r9 = (
             e1_stuck_display(lines),
             e2_table_pipe(lines),
             e3_boxed(lines),
@@ -196,9 +229,11 @@ def main():
             e6_bare_underscore(lines),
             e7_bracket_clash(lines),
             e8_unsafe_macro(lines),
+            e9_orphan_math(lines),
         )
         r7 = r7_holder
-        n = len(r1) + len(r2) + len(r3) + len(r4) + len(r5) + len(r6) + len(r7) + len(r8_holder)
+        n = (len(r1) + len(r2) + len(r3) + len(r4) + len(r5)
+             + len(r6) + len(r7) + len(r8_holder) + len(r9))
         total += n
         status = "OK" if n == 0 else "%d 处问题" % n
         print("\n%-46s %s" % (f, status))
@@ -218,6 +253,8 @@ def main():
             print("   E7 L%-4d 行内公式含方括号冲突: %s" % (ln, txt))
         for ln, txt in r8_holder:
             print("   E8 L%-4d 行内公式用了不安全宏: %s" % (ln, txt))
+        for ln, txt in r9:
+            print("   E9 L%-4d 孤立数学行（不在 $$ 或 $...$ 内）: %s" % (ln, txt))
     print("\n" + "=" * 78)
     print("合计问题: %d" % total)
     if total:

@@ -27,7 +27,13 @@ CSS 码需要"同一比特上 $`X`$ 与 $`Z`$ **反对易**"。此前我**直接
 | $`s`$ | **$`\pm`$ 号**（反射） | L0-c |
 
 双覆盖（dicyclic，`G64` §3）的关系：
+
+$$
+$$
+
+$$
 r^{2L}=1,\qquad s^2=r^{L},\qquad s\,r\,s^{-1}=r^{-1},\qquad r^{L}=-1 (双值性).
+$$
 
 `G64` 的判定：**$`D\_L`$（无中心）给 $`r^L=+1`$ ⇒ 只能给单值表示 ⇒ 没有 $`i`$**；
 **双覆盖给 $`r^L=-1`$ ⇒ 有 $`i`$**。这一步是 `G64` 已核验的。
@@ -54,7 +60,13 @@ $$
 完整 Pauli 群 $`\{\pm I,\pm X,\pm Z,\pm iXZ\}`$ 为 16 阶；
 
 **(E3)（dicyclic 全部关系）** 当 $`L=2`$（$`r`$ 阶 $`2L=4`$）时
+
+$$
+$$
+
+$$
 r^{2L}=I,\qquad r^{L}=r^2=-I (双值性),\qquad s^2=-I=r^L,\qquad s\,r\,s^{-1}=r^{-1};
+$$
 
 **(E4)（循环次序 = 两个 Pauli 之积）**
 
@@ -137,5 +149,10 @@ $`srs^{-1}=(i\sigma\_z)(i\sigma\_y)(i\sigma\_z)^{-1}=i\sigma\_z\sigma\_y\sigma\_
 | 张量积成寄存器 | 借用 | **Zero 有 $`M\_2\otimes\mathbb C^k`$ 模式**（`G62` §2／`R89`）；仅缺站点识别 |
 | 面的选择 | 输入 | 仍是输入 |
 
-\Longrightarrow \text{"Zero ⇒ CSS" 的归属由** **三处借用** \text{降为** **一处半**：
-\text{站点识别（(b)）与面选择（(c)）**.
+$$
+\Longrightarrow\ \text{"Zero}\Rightarrow\text{CSS" 的归属由}\ \textbf{三处借用}\ \text{降为}\ \textbf{一处半}:
+$$
+
+$$
+\text{站点识别 (b) 与面选择 (c)}.
+$$
