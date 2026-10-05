@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# 编辑器 / 系统
+.obsidian/
+.trash/
+.DS_Store
+*.swp
