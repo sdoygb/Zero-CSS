@@ -17,13 +17,13 @@ d_X\overset{?}{=}\mathrm{girth}(G).
 $$
 
 **为什么错**：$L\ge4$ 时 $L\times L$ 环面方格图的 **girth $=4$**——单个面（4-圈）就是最短圈。
-但这个 4-圈**就是面边界本身**，属于 $\operatorname{im}\delta_F$，是**平凡**的，不构成逻辑算符。
+但这个 4-圈**就是面边界本身**，属于 $\mathrm{im}\delta_F$，是**平凡**的，不构成逻辑算符。
 而**实测** $d_X=L$（$L=4$ 时 $d_X=4$、$L=5$ 时 $d_X=5$），与 girth$=4$ 不符。
 
 **正确提法**：定义**本质围长（essential girth）**
 
 $$
-\mathrm{girth}_{\rm ess}(G,F)\ :=\ \min\{\,|c|\ :\ c\in Z_1,\ c\notin\operatorname{im}\delta_F\,\},
+\mathrm{girth}_{\rm ess}(G,F)\ :=\ \min\{\,|c|\ :\ c\in Z_1,\ c\notin\mathrm{im}\delta_F\,\},
 $$
 
 则 $d_X=\mathrm{girth}_{\rm ess}$（即下面的 (D1)）。
@@ -40,13 +40,13 @@ $$
 物理比特 = 边，$n=E$；$H_X$ = 顶点-边关联，$H_Z$ = 面-边关联。
 
 Z_1:=\ker H_X\subseteq\mathbb F_2^E (圈空间, \dim=\beta_1),\qquad
-\delta_F:\mathbb F_2^F\to\mathbb F_2^E, \operatorname{im}\delta_F=\operatorname{rowspace}(H_Z).
+\delta_F:\mathbb F_2^F\to\mathbb F_2^E, \mathrm{im}\delta_F=\mathrm{rowspace}(H_Z).
 
-**引理 4（已证）**：$\operatorname{im}\delta_F\subseteq Z_1$。
+**引理 4（已证）**：$\mathrm{im}\delta_F\subseteq Z_1$。
 
-**定义 1.1（逻辑 X 算符）** $\mathcal L_X:=Z_1\setminus\operatorname{im}\delta_F$；　$d_X:=\min\{|c|:c\in\mathcal L_X\}$。
+**定义 1.1（逻辑 X 算符）** $\mathcal L_X:=Z_1\setminus\mathrm{im}\delta_F$；　$d_X:=\min\{|c|:c\in\mathcal L_X\}$。
 
-**判据 1.2（可计算）** $c\in\operatorname{im}\delta_F\iff$ 方程组 $\delta_Fx=c$ 在 $\mathbb F_2$ 上有解。
+**判据 1.2（可计算）** $c\in\mathrm{im}\delta_F\iff$ 方程组 $\delta_Fx=c$ 在 $\mathbb F_2$ 上有解。
 
 ---
 
@@ -55,20 +55,20 @@ Z_1:=\ker H_X\subseteq\mathbb F_2^E (圈空间, \dim=\beta_1),\qquad
 ### 命题 D1（距离的精确刻画）
 
 $$
-d_X=\mathrm{girth}_{\rm ess}=\min\{|c|:c\in Z_1\setminus\operatorname{im}\delta_F\}.
+d_X=\mathrm{girth}_{\rm ess}=\min\{|c|:c\in Z_1\setminus\mathrm{im}\delta_F\}.
 $$
 
-*证明.* 由定义 1.1 直接重述；需验证"逻辑 X 算符 $=Z_1\setminus\operatorname{im}\delta_F$"。
+*证明.* 由定义 1.1 直接重述；需验证"逻辑 X 算符 $=Z_1\setminus\mathrm{im}\delta_F$"。
 X 型逻辑算符为"与所有 Z 型稳定子对易、且不在 $S_X$ 中"的算符：
-与所有 $Z_f$ 对易 $\iff c\in\ker H_Z$（在 X 基下）$=Z_1$（引理 4 的对偶表述）；不在 $S_X=\operatorname{im}\delta_F$ 中即逻辑。
-故 $\mathcal L_X=Z_1\setminus\operatorname{im}\delta_F$。$\square$
+与所有 $Z_f$ 对易 $\iff c\in\ker H_Z$（在 X 基下）$=Z_1$（引理 4 的对偶表述）；不在 $S_X=\mathrm{im}\delta_F$ 中即逻辑。
+故 $\mathcal L_X=Z_1\setminus\mathrm{im}\delta_F$。$\square$
 
 ### 命题 D2（平凡圈不改变距离）
 
-若 $c\in Z_1$ 且 $c\in\operatorname{im}\delta_F$，则 $c$ 不对 $d_X$ 贡献。
+若 $c\in Z_1$ 且 $c\in\mathrm{im}\delta_F$，则 $c$ 不对 $d_X$ 贡献。
 特别地，**所有面边界、以及面边界的任意对称差，都是平凡的**。
 
-*证明.* $c\in\operatorname{im}\delta_F=\operatorname{rowspace}(H_Z)$ 意味着 $c$ 是若干 $Z_f$ 的乘积所对应的向量，
+*证明.* $c\in\mathrm{im}\delta_F=\mathrm{rowspace}(H_Z)$ 意味着 $c$ 是若干 $Z_f$ 的乘积所对应的向量，
 即 $c$ 可由稳定子生成元生成 ⇒ 不改变逻辑类。$\square$
 
 **推论 D2.1** 单个面是圈（$|\partial f|\ge3$）且平凡 ⇒ 若复形含 4-圈的面，则 $\mathrm{girth}\le4$ 而 $d_X$ 与之无关。
@@ -76,7 +76,7 @@ X 型逻辑算符为"与所有 Z 型稳定子对易、且不在 $S_X$ 中"的算
 ### 命题 D3（上界）
 
 $$
-d_X\ \le\ \min\{\,|c|\ :\ c\in Z_1,\ c\notin\operatorname{im}\delta_F\,\}\ =\ \mathrm{girth}_{\rm ess}.
+d_X\ \le\ \min\{\,|c|\ :\ c\in Z_1,\ c\notin\mathrm{im}\delta_F\,\}\ =\ \mathrm{girth}_{\rm ess}.
 $$
 
 平凡（即 D1 的定义式）；有用之处在于给出**算法**：按重量升序枚举子集，首个"是圈且无解"者即 $d_X$。
@@ -91,7 +91,7 @@ $$
 
 *证明（骨架）.*
 **(i) 上界 $d_X\le L$**：取"直线绕一圈"的圈（水平方向，长 $L$）。
-它的同调类非零（绕环面一周），故 $\notin\operatorname{im}\delta_F=B_1$。故 $d_X\le L$。
+它的同调类非零（绕环面一周），故 $\notin\mathrm{im}\delta_F=B_1$。故 $d_X\le L$。
 
 **(ii) 下界 $d_X\ge L$**：设 $c\in\mathcal L_X$，则 $c$ 的同调类 $\neq0$，即 $c$ 非可缩。
 把 $c$ 提升到万有覆盖 $\mathbb R^2$（方格格点）：$c$ 成为一条从 $u$ 到 $u+\lambda$ 的路径，
@@ -117,7 +117,7 @@ $$
 **注意最后两列**：$L=5$ 时 $\mathrm{girth}=4$（面）而 $d_X=5$ ⇒ **$d_X\neq\mathrm{girth}$ 被直接测出**。
 （$L=4$ 时两者数值巧合相等，$L=5$ 时分离。）
 
-**"25 圈全平凡"是关键**：5×5 环面的 25 个 4-圈恰是 25 个面，全在 $\operatorname{im}\delta_F$ 内，
+**"25 圈全平凡"是关键**：5×5 环面的 25 个 4-圈恰是 25 个面，全在 $\mathrm{im}\delta_F$ 内，
 故 4 不给出逻辑；$d_X$ 由重量 5 的首个非平凡圈给出。
 
 ### 3.2 方格族（$k=0$）
@@ -134,11 +134,11 @@ $$
 | # | 项 | 状态 |
 |--:|:--|:--|
 | 1 | D4 下界中"非可缩圈长度 $\ge L$" | **论证性，未严格化**。缺口：需要"环面的非可缩圈在万有覆盖中连接 $u$ 与 $u+\lambda$（$\lambda\neq0$）⇒ 投影后长度 $\ge L$"的严格证明。直觉上显然（绕一圈至少要 $L$ 步），但本文未写出严格版本 |
-| 2 | D4 中 $\operatorname{im}\delta_F=B_1$（面边界生成全部边界） | 依赖维数计数 $\operatorname{rank}(H_Z)=F-1=\dim B_1$（环面族实测），未独立证明 |
+| 2 | D4 中 $\mathrm{im}\delta_F=B_1$（面边界生成全部边界） | 依赖维数计数 $\mathrm{rank}(H_Z)=F-1=\dim B_1$（环面族实测），未独立证明 |
 | 3 | **提法更正** | 初稿与任务描述写 "$d_X=\mathrm{girth}$"，**错**（$L\ge4$ 时 girth$=4\neq d_X$）。正确量是 essential girth（§0） |
 | 4 | $d_Z$ | **未证**。构造性上界：给非平凡圈 $c$，其最小割 $S$ 给出 Z 型逻辑，$d_Z\le\min_c\min\mathrm{cut}(c)$ |
 | 5 | 环面 5×5 的 $d_Z$ 与总距离 $d=\min(d_X,d_Z)$ | **未计算**（$d_X=5$ 已定） |
-| 6 | 面集（胞腔化）的选择 | 输入量；改变 $\operatorname{im}\delta_F$ 从而改变 $d_X$ |
+| 6 | 面集（胞腔化）的选择 | 输入量；改变 $\mathrm{im}\delta_F$ 从而改变 $d_X$ |
 
 ---
 
@@ -147,7 +147,7 @@ $$
 **(i)（已证，命题 D1）**
 
 $$
-d_X=\mathrm{girth}_{\rm ess}=\min\{\,|c|\ :\ c\in Z_1\setminus\operatorname{im}\delta_F\,\}.
+d_X=\mathrm{girth}_{\rm ess}=\min\{\,|c|\ :\ c\in Z_1\setminus\mathrm{im}\delta_F\,\}.
 $$
 
 **(ii)（提法更正）** $d_X\neq\mathrm{girth}$：$L\ge4$ 时 $\mathrm{girth}=4$（单个面）而 $d_X=L$；

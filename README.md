@@ -84,13 +84,13 @@ $$
 **已核验**：方格 3×3/4×4、环面 3×3/5×5 全部通过（同型恒对易；反对易 ⟺ 交集为奇；异型反对易对 $=0$）。
 
 **已证**：引理 1–3 ＋ 定理 A（含引理 3 的**无条件版**：面取 Zero 的闭合词时，
-$|\operatorname{star}(v)\cap\partial f|=\deg_{\partial f}(v)\in\{0\}\cup2\mathbb N$ 恒为偶
+$|\mathrm{star}(v)\cap\partial f|=\deg_{\partial f}(v)\in\{0\}\cup2\mathbb N$ 恒为偶
 ⇒ 对易**无条件成立**）。详见 [docs/TheoA_commutation_proof.md](docs/TheoA_commutation_proof.md)。
 
-**已证（定理 B）**：$k=2E-(V-c)-\operatorname{rank}(K_Z)$；连通且面独立时 $k=2E-(V-1)-F$（11 例实测）。
+**已证（定理 B）**：$k=2E-(V-c)-\mathrm{rank}(K_Z)$；连通且面独立时 $k=2E-(V-1)-F$（11 例实测）。
 $k=2\beta_1$ **不普遍成立**（已否证）。详见 [docs/TheoB_k_formula_proof.md](docs/TheoB_k_formula_proof.md)。
 
-**未证**：$\operatorname{rank}(K_Z)$ 的闭式（$\mathrm{rel}$ 由什么决定）；$d$ 与 girth／最小割的关系；面（胞腔化）的选择如何影响 $k$。
+**未证**：$\mathrm{rank}(K_Z)$ 的闭式（$\mathrm{rel}$ 由什么决定）；$d$ 与 girth／最小割的关系；面（胞腔化）的选择如何影响 $k$。
 
 ### 2.4 分层把码的部件各就各位
 
@@ -115,7 +115,7 @@ $$
 | 环面 4×4 | 16 | 32 | 16 | 17 | 15 | 15 | **2** | **4** |
 
 $$
-k=E-r_X-r_Z=\beta_1-\operatorname{rank}(H_Z)\quad(\text{连通，已证});\qquad
+k=E-r_X-r_Z=\beta_1-\mathrm{rank}(H_Z)\quad(\text{连通，已证});\qquad
 \text{环面}=[[2L^2,2,L]]\ (\text{toric code})
 $$
 
@@ -125,7 +125,7 @@ $$
 ### 2.5b 距离 $d_X$（定理 D，已证 + 已精确计算）
 
 $$
-d_X=\mathrm{girth}_{\rm ess}=\min\{|c|:c\in Z_1\setminus\operatorname{im}\delta_F\}
+d_X=\mathrm{girth}_{\rm ess}=\min\{|c|:c\in Z_1\setminus\mathrm{im}\delta_F\}
 $$
 
 | 复形 | $d_X$ | girth | 说明 |

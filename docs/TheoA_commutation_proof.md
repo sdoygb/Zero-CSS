@@ -22,7 +22,7 @@ $K=(V,E,F)$ 为一个有限胞腔复形：
 **定义 0.2（星形）** 对 $v\in V$，$v$ 的**星形**为
 
 $$
-\operatorname{star}(v)\ :=\ \{\,e\in E\ :\ v\in e\,\}\ \subseteq\ E .
+\mathrm{star}(v)\ :=\ \{\,e\in E\ :\ v\in e\,\}\ \subseteq\ E .
 $$
 
 **定义 0.3（重数）** 对 $v\neq w\in V$，记 $\mu(v,w)$ 为 $v,w$ 之间的边数（重边计重数）。
@@ -38,7 +38,7 @@ $$
 定义**顶点算符**与**面算符**
 
 $$
-A_v:=\prod_{e\in\operatorname{star}(v)}X_e,\qquad
+A_v:=\prod_{e\in\mathrm{star}(v)}X_e,\qquad
 B_f:=\prod_{e\in\partial f}Z_e .
 $$
 
@@ -80,17 +80,17 @@ $$
 对一切 $v\neq w\in V$：
 
 $$
-\big|\operatorname{star}(v)\cap\operatorname{star}(w)\big|=\mu(v,w).
+\big|\mathrm{star}(v)\cap\mathrm{star}(w)\big|=\mu(v,w).
 $$
 
 *证明.* 由定义
-\operatorname{star}(v)\cap\operatorname{star}(w)=\{\,e\in E : v\in e 且 w\in e\,\}.
+\mathrm{star}(v)\cap\mathrm{star}(w)=\{\,e\in E : v\in e 且 w\in e\,\}.
 一条边 $e$（作为 $\{v,w\}$ 型的二元组）同时含 $v$ 与 $w$，当且仅当 $e$ 的两个端点是 $v$ 与 $w$，即 $e$ 是 $v,w$ 之间的一条边。
 故该集合恰为"$v,w$ 之间的边"之集，其元素个数按定义 0.3 即 $\mu(v,w)$。重边在此**逐条计数**，故等号两边同步计入。$\square$
 
-**推论 2.1** 若 $K$ 是简单图（$\mu\le 1$），则 $|\operatorname{star}(v)\cap\operatorname{star}(w)|\in\{0,1\}$，其中取 $1$ 当且仅当 $vw\in E$。
+**推论 2.1** 若 $K$ 是简单图（$\mu\le 1$），则 $|\mathrm{star}(v)\cap\mathrm{star}(w)|\in\{0,1\}$，其中取 $1$ 当且仅当 $vw\in E$。
 
-> **注 2.2（必须记住的反例）** 推论 2.1 说明：若把 $X$ 与 $Z$ 型算符**都**放在顶点上（即用 $A_v$ 与 $\prod_{e\in\operatorname{star}(v)}Z_e$），
+> **注 2.2（必须记住的反例）** 推论 2.1 说明：若把 $X$ 与 $Z$ 型算符**都**放在顶点上（即用 $A_v$ 与 $\prod_{e\in\mathrm{star}(v)}Z_e$），
 > 则相邻顶点共享恰 $1$ 条边，由引理 0.6 得**反对易**，该构造**不合法**。
 > 这正是必须引入**面**的原因。
 
@@ -100,7 +100,7 @@ $$
 则对一切 $v\in V$：
 
 $$
-\big|\operatorname{star}(v)\cap\partial f\big|\ =\ \deg_{\partial f}(v)\ \in\ \{0\}\cup 2\mathbb N .
+\big|\mathrm{star}(v)\cap\partial f\big|\ =\ \deg_{\partial f}(v)\ \in\ \{0\}\cup 2\mathbb N .
 $$
 
 特别地，若 $\partial f$ 是**简单圈**，则 $\deg_{\partial f}(v)\in\{0,2\}$。
@@ -108,10 +108,10 @@ $$
 *证明.* 分两步。
 
 **第一步（交集 = 边界度数）**。
-一条边 $e$ 属于 $\operatorname{star}(v)$ 当且仅当 $v\in e$；故
+一条边 $e$ 属于 $\mathrm{star}(v)$ 当且仅当 $v\in e$；故
 
 $$
-\operatorname{star}(v)\cap\partial f=\{\,e\in\partial f\ :\ v\in e\,\},
+\mathrm{star}(v)\cap\partial f=\{\,e\in\partial f\ :\ v\in e\,\},
 $$
 
 其元素个数逐条计数（重边重复计入）恰为 $v$ 在子（重）图 $\partial f$ 中的度数 $\deg_{\partial f}(v)$。$\square_{\text{step1}}$
@@ -125,14 +125,14 @@ $$
 因为序列是首尾相接的走步（每一次到达 $v$ 必伴随一次离开 $v$；起点 $v_0=v_k$ 亦被计入一次离开）。
 故 $\deg_{\partial f}(v)$ 为偶。
 
-**第三步（结合）**。由第一、二步，$|\operatorname{star}(v)\cap\partial f|=\deg_{\partial f}(v)\in\{0\}\cup2\mathbb N$。$\square$
+**第三步（结合）**。由第一、二步，$|\mathrm{star}(v)\cap\partial f|=\deg_{\partial f}(v)\in\{0\}\cup2\mathbb N$。$\square$
 
 > **必要性**：若序列**不闭合**（是路径），则其两个端点度数为 $1$（奇），引理 3 失效。
 > 脚本 R2 核验了这一点（`zero_lemma3_unconditional.py`）：
 > 路径 $(0{-}1{-}2)$ 的度数为 $\{0{:}1,1{:}2,2{:}1\}$ —— 不全偶。
 > 故"**闭合**"（＝ Z0③ 的零和）是引理 3 的**必要结构**。
 
-**推论 3.1（一般对易）** 由引理 0.6 与引理 3，$s:=|\operatorname{star}(v)\cap\partial f|$ 为偶数，故
+**推论 3.1（一般对易）** 由引理 0.6 与引理 3，$s:=|\mathrm{star}(v)\cap\partial f|$ 为偶数，故
 
 $$
 A_vB_f=(-1)^{s}B_fA_v=B_fA_v .
@@ -155,17 +155,17 @@ $$
 **(ii)** 异型算符的对易符号为
 
 $$
-A_vB_f=(-1)^{\,|\operatorname{star}(v)\cap\partial f|}\,B_fA_v ;
+A_vB_f=(-1)^{\,|\mathrm{star}(v)\cap\partial f|}\,B_fA_v ;
 $$
 
-**(iii)** 从而 $A_vB_f=B_fA_v$ **恒成立**（对一切 $v\in V$、$f\in F$）。事实上由引理 3，$|\operatorname{star}(v)\cap\partial f|$ 恒为偶数，故符号 $(-1)^s=+1$。因此 $\{A_v\}\cup\{B_f\}$ 构成**两两对易**的算符族，生成一个良定义的稳定子群
+**(iii)** 从而 $A_vB_f=B_fA_v$ **恒成立**（对一切 $v\in V$、$f\in F$）。事实上由引理 3，$|\mathrm{star}(v)\cap\partial f|$ 恒为偶数，故符号 $(-1)^s=+1$。因此 $\{A_v\}\cup\{B_f\}$ 构成**两两对易**的算符族，生成一个良定义的稳定子群
 
 $$
 \mathcal S=\Big\langle\,A_v\ (v\in V),\ B_f\ (f\in F)\,\Big\rangle\ \subseteq\ \mathcal P_{2|E|} .
 $$
 
-*证明.* (i) 即引理 1。(ii) 即引理 0.6（取 $S=\operatorname{star}(v)$、$T=\partial f$）。
-(iii) 由引理 3（无条件版），$|\operatorname{star}(v)\cap\partial f|\in\{0\}\cup2\mathbb N$ 恒为偶数，故符号为 $+1$，对易。
+*证明.* (i) 即引理 1。(ii) 即引理 0.6（取 $S=\mathrm{star}(v)$、$T=\partial f$）。
+(iii) 由引理 3（无条件版），$|\mathrm{star}(v)\cap\partial f|\in\{0\}\cup2\mathbb N$ 恒为偶数，故符号为 $+1$，对易。
 
 **良定义性**：每个生成元是自伴对合（$A_v^2=B_f^2=I$：每条边最多出现一次于星形／边界，$X^2=Z^2=I$），
 且两两对易 ⇒ 生成一个阿贝尔群，其元素皆为对合 ⇒ $\mathcal S$ 同构于 $(\mathbb Z_2)^{r}$（$r$ 为生成元秩），
@@ -212,7 +212,7 @@ $K$ 的三个部件都有 Zero 出处：
 
 | # | 项 | 状态 |
 |--:|:--|:--|
-| 1 | $k=2E-(V-1)-F$（码的逻辑量子比特数闭式） | **未证**；目前是实测（需 $\operatorname{rank}\{A_v\}=V-1$、$\operatorname{rank}\{B_f\}=\lvert F \rvert$ 的证明） |
+| 1 | $k=2E-(V-1)-F$（码的逻辑量子比特数闭式） | **未证**；目前是实测（需 $\mathrm{rank}\{A_v\}=V-1$、$\mathrm{rank}\{B_f\}=\lvert F \rvert$ 的证明） |
 | 3 | 距离 $d$ 与 girth／最小割的精确关系 | **未证**；仅小例实测 |
 | 4 | 自环（$e=(v,v)$）的处理 | **未处理**；本文件排除自环，若允许，$A_v$ 中 $X_e$ 出现一次，引理 2 的表述需调整 |
 | 5 | 生成元的**独立性**（是否有冗余关系） | 未证；推论 A.1 只保证群良定义，不保证秩 |
@@ -225,6 +225,6 @@ $K$ 的三个部件都有 Zero 出处：
 |:--|:--|:--|
 | v1（`zero_theorem_a_euler_commute.py`） | "对易 $\iff$ 图欧拉（顶点度数全偶）" | **撤回**：该构造把 $X,Z$ 都放顶点，由推论 2.1 在简单图上相邻顶点即反对易 ⇒ 构造本身非法 |
 | v2（`zero_theorem_a_fixed.py`） | 推测"开边界会产生反对易对" | **撤回**：实测异型反对易对 $=0$；引理 3 给出原因 |
-| v3（本文件） | 引理 1–3 ＋ 定理 A：判据是 $\lvert \operatorname{star}(v)\cap\partial f \rvert$ 为偶，**对一切闭合词恒成立**（无条件） | **本版** |
+| v3（本文件） | 引理 1–3 ＋ 定理 A：判据是 $\lvert \mathrm{star}(v)\cap\partial f \rvert$ 为偶，**对一切闭合词恒成立**（无条件） | **本版** |
 | 实现 | 矩阵表示（$2^{2E}$ 维） | **废弃**：3×3 环面 $4.7\times10^{21}$ 元素，实测占 43% 内存、64 min CPU 未完成 |
 | 实现 | GF(2) 辛向量 | **采用**：同任务 0.14 秒 |

@@ -29,30 +29,38 @@ def read(f):
 
 
 def e1_stuck_display(lines):
-    """多行 $$ 块的边界：开块后、闭块前都必须是空行。
+    """多行 $$ 块的边界规则。
 
-    用状态机区分开块/闭块（裸 $$ 成对出现）。
+    正确形式：
+        空行 / 段首
+        $$
+        公式
+        $$
+        空行 / 段尾 / 另一块
+    即 **开块 $$ 前**要有空行，**闭块 $$ 后**要有空行。
+    （早期版本把这两条写反了，导致漏报。）
+
+    用状态机区分开块/闭块。
     """
     out = []
     in_block = False
     for i, l in enumerate(lines):
-        st = l.strip()
-        if st == "$$":
-            if not in_block:
-                # 开块：前面应为空行（文件头/表格外），后面应紧跟内容
-                prev = lines[i - 1].strip() if i > 0 else ""
-                if prev and not prev.startswith("|") and not prev.startswith("#"):
-                    out.append((i + 1, "开块 $$ 前缺空行: " + prev[:50]))
-                in_block = True
-            else:
-                # 闭块：前面（公式末行）必须非空，后面必须为空行
-                prev = lines[i - 1].strip() if i > 0 else ""
-                nxt = lines[i + 1].strip() if i + 1 < len(lines) else ""
-                if not prev:
-                    out.append((i + 1, "闭块 $$ 前有空行（块为空）"))
-                if nxt:
-                    out.append((i + 1, "闭块 $$ 后缺空行: " + nxt[:50]))
-                in_block = False
+        if l.strip() != "$$":
+            continue
+        prev = lines[i - 1].strip() if i > 0 else ""
+        nxt = lines[i + 1].strip() if i + 1 < len(lines) else ""
+        if not in_block:
+            # 开块：前面应为空行（段首/表格外可例外）
+            if prev and not prev.startswith("|") and not prev.startswith("#"):
+                out.append((i + 1, "开块 $$ 前缺空行: " + prev[:50]))
+            in_block = True
+        else:
+            # 闭块：后面应为空行（段尾可例外）
+            if nxt and not nxt.startswith("|"):
+                out.append((i + 1, "闭块 $$ 后缺空行: " + nxt[:50]))
+            in_block = False
+    if in_block:
+        out.append((len(lines), "存在未闭合的 $$ 块"))
     return out
 
 
