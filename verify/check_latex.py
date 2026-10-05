@@ -78,20 +78,33 @@ def e2_table_pipe(lines):
     return out
 
 
-# GitHub 宏白名单**拒绝**的宏（实测确认；本地 MathJax 能解析，故必须硬编码）
-BANNED = {
-    r"\boxed": "bbox 扩展未加载",
-    r"\operatorname": "不在 GitHub 宏白名单内",
-    r"\operatorname*": "不在 GitHub 宏白名单内",
-}
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from safe_macros import SAFE as _SAFE, BANNED as _BANNED
 
 
 def e3_boxed(lines):
+    """行内/块级数学中使用了**已知被 GitHub 拒绝**的宏。"""
     out = []
     for i, l in enumerate(lines, 1):
-        for mac, why in BANNED.items():
-            if mac in l:
-                out.append((i, "%s (%s)" % (mac, why)))
+        for mac, why in _BANNED.items():
+            if re.search(r"\\" + re.escape(mac) + r"(?![a-zA-Z])", l):
+                out.append((i, "\\%s (%s)" % (mac, why)))
+    return out
+
+
+def e8_unsafe_macro(lines):
+    """行内公式使用了最小安全宏集之外的宏（A 策略）。
+
+    校验范围：``$`...`$`` 与 ``$...$`` 两种行内定界。
+    """
+    out = []
+    for i, l in enumerate(lines, 1):
+        for m in re.finditer(r"\$`([^`\n]+)`\$", l):
+            for mm in re.finditer(r"\\([a-zA-Z]+)", m.group(1)):
+                if mm.group(1) not in _SAFE:
+                    out.append((i, "\\%s 不在最小安全集: %s" % (mm.group(1), m.group(1)[:50])))
+                    break
     return out
 
 
@@ -174,7 +187,7 @@ def main():
     for f in FILES:
         text = read(f)
         lines = text.split("\n")
-        r1, r2, r3, r4, r5, r6, r7_holder = (
+        r1, r2, r3, r4, r5, r6, r7_holder, r8_holder = (
             e1_stuck_display(lines),
             e2_table_pipe(lines),
             e3_boxed(lines),
@@ -182,9 +195,10 @@ def main():
             e5_table_columns(lines),
             e6_bare_underscore(lines),
             e7_bracket_clash(lines),
+            e8_unsafe_macro(lines),
         )
         r7 = r7_holder
-        n = len(r1) + len(r2) + len(r3) + len(r4) + len(r5) + len(r6) + len(r7)
+        n = len(r1) + len(r2) + len(r3) + len(r4) + len(r5) + len(r6) + len(r7) + len(r8_holder)
         total += n
         status = "OK" if n == 0 else "%d 处问题" % n
         print("\n%-46s %s" % (f, status))
@@ -193,7 +207,7 @@ def main():
         for ln, txt in r2:
             print("   E2 L%-4d 表格内裸 |: %s" % (ln, txt))
         for ln, txt in r3:
-            print("   E3 L%-4d \\boxed（GitHub 不渲染）: %s" % (ln, txt))
+            print("   E3 L%-4d 已知被拒的宏: %s" % (ln, txt))
         for ln, kind, ctx in r4:
             print("   E4 L%-4d 控制字符(%s): ...%s..." % (ln, kind, ctx))
         for ln, txt in r5:
@@ -202,6 +216,8 @@ def main():
             print("   E6 L%-4d 行内公式含裸 _（会被 Markdown 吃掉）: %s" % (ln, txt))
         for ln, txt in r7:
             print("   E7 L%-4d 行内公式含方括号冲突: %s" % (ln, txt))
+        for ln, txt in r8_holder:
+            print("   E8 L%-4d 行内公式用了不安全宏: %s" % (ln, txt))
     print("\n" + "=" * 78)
     print("合计问题: %d" % total)
     if total:
