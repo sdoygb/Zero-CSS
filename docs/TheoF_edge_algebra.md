@@ -48,9 +48,12 @@ Z_e\,|w\rangle:=(-1)^{w_e**|w\rangle\qquad(**读取：Z0③ 计数的逐边读�
 **(F3)（单边完整二能级代数）** $\langle F_e,Z_e\rangle\cong M_2$，$\dim=4$；
 
 **(F4)（张量积结构是导出的）** 不同边的算符两两对易，且
-$$\dim\Big\langle\{F_e,Z_e\}_{e\in E}\Big\rangle=4^{|E|}
+
+$$
+\dim\Big\langle\{F_e,Z_e\}_{e\in E}\Big\rangle=4^{|E|}
 \qquad\Longrightarrow\qquad
-\Big\langle\{F_e,Z_e\}\Big\rangle\ \cong\ \bigotimes_{e\in E}M_2 .$$
+\Big\langle\{F_e,Z_e\}\Big\rangle\ \cong\ \bigotimes_{e\in E}M_2 .
+$$
 
 **(F5)（局域性）** $\operatorname{supp}(F_e)=\operatorname{supp}(Z_e)=\{e\}$。
 
@@ -60,8 +63,15 @@ $$\dim\Big\langle\{F_e,Z_e\}_{e\in E}\Big\rangle=4^{|E|}
 $Z_e$ 是对角且对角元为 $\pm1$，故 $Z_e^2=I$。$\square$
 
 **(F2)** 在基 $\{|w\rangle\}$ 上直接计算
-$$F_eZ_e|w\rangle=F_e(-1)^{w_e}|w\rangle=(-1)^{w_e}|w\oplus\mathbf e_e\rangle,$$
-$$Z_eF_e|w\rangle=Z_e|w\oplus\mathbf e_e\rangle=(-1)^{1-w_e}|w\oplus\mathbf e_e\rangle=-(-1)^{w_e}|w\oplus\mathbf e_e\rangle .$$
+
+$$
+F_eZ_e|w\rangle=F_e(-1)^{w_e}|w\rangle=(-1)^{w_e}|w\oplus\mathbf e_e\rangle,
+$$
+
+$$
+Z_eF_e|w\rangle=Z_e|w\oplus\mathbf e_e\rangle=(-1)^{1-w_e}|w\oplus\mathbf e_e\rangle=-(-1)^{w_e}|w\oplus\mathbf e_e\rangle .
+$$
+
 两者相差一个整体符号，且 $(-1)^{w_e}\in\{\pm1\}\subset\mathbb R$ ⇒ 实反对易。$\square$
 
 **(F3)** $F_e$ 与 $Z_e$ 生成的代数含 $I,F_e,Z_e,F_eZ_e$；这四个矩阵在 $\Omega\upharpoonright e$ 上是

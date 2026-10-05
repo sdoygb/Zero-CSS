@@ -78,7 +78,7 @@ $$
 $A_v=\prod_{e\ni v}X_e$、$B_f=\prod_{e\in\partial f}Z_e$：
 
 $$
-\boxed{\ A_v\ \text{与}\ B_f\ \text{对易}\iff |{\rm star}(v)\cap\partial f|\ \text{为偶}\ }
+\ A_v\ \text{与}\ B_f\ \text{对易}\iff |{\rm star}(v)\cap\partial f|\ \text{为偶}
 $$
 
 **已核验**：方格 3×3/4×4、环面 3×3/5×5 全部通过（同型恒对易；反对易 ⟺ 交集为奇；异型反对易对 $=0$）。
@@ -114,15 +114,19 @@ $$
 | 环面 3×3 | 9 | 18 | 9 | 10 | 8 | 8 | **2** | **3** |
 | 环面 4×4 | 16 | 32 | 16 | 17 | 15 | 15 | **2** | **4** |
 
-$$k=E-r_X-r_Z=\beta_1-\operatorname{rank}(H_Z)\quad(\text{连通，已证});\qquad
-\text{环面}=[[2L^2,2,L]]\ (\text{toric code})$$
+$$
+k=E-r_X-r_Z=\beta_1-\operatorname{rank}(H_Z)\quad(\text{连通，已证});\qquad
+\text{环面}=[[2L^2,2,L]]\ (\text{toric code})
+$$
 
 > **⚠ 作废**：早期版本用 $n=2E$（每条边两个比特）并给出环面 $k=20$、码率 0.556——**错误**。
 > $X$ 型与 $Z$ 型稳定子作用在**同一批边比特**上，两组不独立。详见 [docs/TheoB_k_formula_proof.md](docs/TheoB_k_formula_proof.md) §0 的作废声明。
 
 ### 2.5b 距离 $d_X$（定理 D，已证 + 已精确计算）
 
-$$d_X=\mathrm{girth}_{\rm ess}=\min\{|c|:c\in Z_1\setminus\operatorname{im}\delta_F\}$$
+$$
+d_X=\mathrm{girth}_{\rm ess}=\min\{|c|:c\in Z_1\setminus\operatorname{im}\delta_F\}
+$$
 
 | 复形 | $d_X$ | girth | 说明 |
 |:--|--:|--:|:--|
@@ -146,9 +150,11 @@ $$d_X=\mathrm{girth}_{\rm ess}=\min\{|c|:c\in Z_1\setminus\operatorname{im}\delt
 | $F_eZ_e=-Z_eF_e$（**实**反对易） | ✅ 原生（定理 F；不需 $\times i$） |
 | 张量积 $(\mathbb C^2)^{\otimes E}$ | ✅ **导出**（F4：不同边对易 ＋ 维数 $4^E$） |
 | 复化（复振幅／Born） | ✅ 用 `G62`(GNS) ＋ `G64`(双覆盖) |
-| **面的选择规则** | ⚠️ **判定：不可从原语导出**（定理 G）；但 $	extstyle\sum_f\partial f=0$ 必然 ⇒ $k=\beta_1-|F|+1$ |
+| **面的选择规则** | ⚠️ **判定：不可从原语导出**（定理 G）；但 $\textstyle\sum_f\partial f=0$ 必然 ⇒ $k=\beta_1-\lvert F \rvert+1$ |
 
-$$\text{归属缺口：三处借用} \longrightarrow \textbf{仅剩一处}\ (\text{面的选择})$$
+$$
+\text{归属缺口：三处借用} \longrightarrow \textbf{仅剩一处}\ (\text{面的选择})
+$$
 
 ### 2.6 与 tqec 的接口（同一套方法）
 

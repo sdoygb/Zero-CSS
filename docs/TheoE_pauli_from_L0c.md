@@ -40,9 +40,11 @@ r^{2L}=1,\qquad s^2=r^{L},\qquad s\,r\,s^{-1}=r^{-1},\qquad r^{L}=-1 (双值性)
 
 在 2 维不可约表示（$M_2(\mathbb C)$，`G27` 已从 $D_L$ 导出）内，取
 
-$$X:=\sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+$$
+X:=\sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
 Z:=\sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
-\boxed{\,s:=i\sigma_z=\begin{pmatrix}i&0\\0&-i\end{pmatrix}\,}$$
+\,s:=i\sigma_z=\begin{pmatrix}i&0\\0&-i\end{pmatrix}\,
+$$
 
 则
 
@@ -55,7 +57,10 @@ Z:=\sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
 r^{2L}=I,\qquad r^{L}=r^2=-I (双值性),\qquad s^2=-I=r^L,\qquad s\,r\,s^{-1}=r^{-1};
 
 **(E4)（循环次序 = 两个 Pauli 之积）**
-$$ZX=r,\qquad XZ=-r .$$
+
+$$
+ZX=r,\qquad XZ=-r .
+$$
 
 *证明（构造性，全部数值残差 $0$）.*
 

@@ -11,14 +11,21 @@
 ## 0 ⚠ 提法更正（最重要的一节）
 
 **错误提法**（本文件初稿曾采用，且任务描述中亦如此）：
-$$d_X\overset{?}{=}\mathrm{girth}(G).$$
+
+$$
+d_X\overset{?}{=}\mathrm{girth}(G).
+$$
 
 **为什么错**：$L\ge4$ 时 $L\times L$ 环面方格图的 **girth $=4$**——单个面（4-圈）就是最短圈。
 但这个 4-圈**就是面边界本身**，属于 $\operatorname{im}\delta_F$，是**平凡**的，不构成逻辑算符。
 而**实测** $d_X=L$（$L=4$ 时 $d_X=4$、$L=5$ 时 $d_X=5$），与 girth$=4$ 不符。
 
 **正确提法**：定义**本质围长（essential girth）**
-$$\mathrm{girth}_{\rm ess}(G,F)\ :=\ \min\{\,|c|\ :\ c\in Z_1,\ c\notin\operatorname{im}\delta_F\,\},$$
+
+$$
+\mathrm{girth}_{\rm ess}(G,F)\ :=\ \min\{\,|c|\ :\ c\in Z_1,\ c\notin\operatorname{im}\delta_F\,\},
+$$
+
 则 $d_X=\mathrm{girth}_{\rm ess}$（即下面的 (D1)）。
 
 $$
@@ -47,7 +54,9 @@ Z_1:=\ker H_X\subseteq\mathbb F_2^E (圈空间, \dim=\beta_1),\qquad
 
 ### 命题 D1（距离的精确刻画）
 
-$$d_X=\mathrm{girth}_{\rm ess}=\min\{|c|:c\in Z_1\setminus\operatorname{im}\delta_F\}.$$
+$$
+d_X=\mathrm{girth}_{\rm ess}=\min\{|c|:c\in Z_1\setminus\operatorname{im}\delta_F\}.
+$$
 
 *证明.* 由定义 1.1 直接重述；需验证"逻辑 X 算符 $=Z_1\setminus\operatorname{im}\delta_F$"。
 X 型逻辑算符为"与所有 Z 型稳定子对易、且不在 $S_X$ 中"的算符：
@@ -66,14 +75,19 @@ X 型逻辑算符为"与所有 Z 型稳定子对易、且不在 $S_X$ 中"的算
 
 ### 命题 D3（上界）
 
-$$d_X\ \le\ \min\{\,|c|\ :\ c\in Z_1,\ c\notin\operatorname{im}\delta_F\,\}\ =\ \mathrm{girth}_{\rm ess}.$$
+$$
+d_X\ \le\ \min\{\,|c|\ :\ c\in Z_1,\ c\notin\operatorname{im}\delta_F\,\}\ =\ \mathrm{girth}_{\rm ess}.
+$$
 
 平凡（即 D1 的定义式）；有用之处在于给出**算法**：按重量升序枚举子集，首个"是圈且无解"者即 $d_X$。
 
 ### 命题 D4（环面）
 
 对 $L\times L$ 环面（$L\ge3$）的方格胞腔化：
-$$d_X=L.$$
+
+$$
+d_X=L.
+$$
 
 *证明（骨架）.*
 **(i) 上界 $d_X\le L$**：取"直线绕一圈"的圈（水平方向，长 $L$）。
@@ -132,7 +146,9 @@ $$d_X=L.$$
 
 **(i)（已证，命题 D1）**
 
-$$d_X=\mathrm{girth}_{\rm ess}=\min\{\,|c|\ :\ c\in Z_1\setminus\operatorname{im}\delta_F\,\}.$$
+$$
+d_X=\mathrm{girth}_{\rm ess}=\min\{\,|c|\ :\ c\in Z_1\setminus\operatorname{im}\delta_F\,\}.
+$$
 
 **(ii)（提法更正）** $d_X\neq\mathrm{girth}$：$L\ge4$ 时 $\mathrm{girth}=4$（单个面）而 $d_X=L$；
 $L=5$ 时两者数值直接分离（$4$ vs $5$）。

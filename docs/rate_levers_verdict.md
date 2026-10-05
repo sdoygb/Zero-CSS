@@ -62,7 +62,7 @@ $$
 | 8, 9 | 2 | **3** | 0.111 |
 
 $$
-\boxed{\ \text{只有两个取值}:\ (k{=}2,\ d{=}3)\ \text{或}\ (k\ge3,\ d{=}1)\ }
+\ \text{只有两个取值}:\ (k{=}2,\ d{=}3)\ \text{或}\ (k\ge3,\ d{=}1)
 $$
 
 **机制**：$d_X$ 只在面**张满**整个圈空间（$\operatorname{rank}(H_Z)=\beta_1-2$）时才等于 $L$；
@@ -114,13 +114,12 @@ $$
 ## 6 结论
 
 $$
-\boxed{\
 \begin{aligned}
 &\text{(i)}\ \text{加面（独立）} \Rightarrow k\downarrow;\quad \text{加面（依赖）} \Rightarrow \text{无变化};\quad
 \text{减面} \Rightarrow d=1;\\[2pt]
 &\text{(ii)}\ \chi=0\ \text{复形（任意维环面）：}k=O(1)\ \text{恒成立} \Rightarrow \text{码率} \to 0;\\[2pt]
 &\text{(iii)}\ \text{唯一出路是}\ \chi<0\ \text{（双曲复形）——}\textbf{但尚未实测确认}.
-\end{aligned}}
+\end{aligned}
 $$
 
 **所以"用 Zero 提高 CSS 码率"目前只有一条未验证的路**：双曲复形。

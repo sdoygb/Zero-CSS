@@ -24,7 +24,10 @@ H_X\in\mathbb F_2^{V\times E},　 H_X[v,e]=1\iff v\in e
 \qquad（X 型稳定子：顶点星形）
 H_Z\in\mathbb F_2^{F\times E},　 H_Z[f,e]=1\iff e\in\partial f
 \qquad（Z 型稳定子：面边界）
-$$S_X=\operatorname{rowspace}(H_X),\qquad S_Z=\operatorname{rowspace}(H_Z).$$
+
+$$
+S_X=\operatorname{rowspace}(H_X),\qquad S_Z=\operatorname{rowspace}(H_Z).
+$$
 
 **对易条件**（定理 A）：$H_XH_Z^\top=0$（恒成立，因 $|\operatorname{star}(v)\cap\partial f|=\deg_{\partial f}(v)$ 为偶）。
 
@@ -33,7 +36,10 @@ $$S_X=\operatorname{rowspace}(H_X),\qquad S_Z=\operatorname{rowspace}(H_Z).$$
 ## 1 引理 5（关联矩阵的秩）
 
 **引理 5** 设底图有 $c$ 个连通分量，则
-$$\operatorname{rank}(H_X)=V-c .$$
+
+$$
+\operatorname{rank}(H_X)=V-c .
+$$
 
 *证明.* 设 $x\in\mathbb F_2^V$ 且 $H_Xx=0$。第 $e=(a,b)$ 列为零给出 $x_a+x_b=0$，即 $x_a=x_b$；
 故 $S=\{v:x_v=1\}$ 不含"恰一个端点在 $S$"的边，即 $\delta(S)=\varnothing$，$S$ 是连通分量之并。
@@ -49,10 +55,16 @@ $$\operatorname{rank}(H_X)=V-c .$$
 
 ### 定理 B（v2）
 
-$$k\ :=\ \dim_{\mathbb C}\mathcal C\ =\ E-\operatorname{rank}(H_X)-\operatorname{rank}(H_Z)
-\ =\ \beta_1+(c-1)-\operatorname{rank}(H_Z),$$
+$$
+k\ :=\ \dim_{\mathbb C}\mathcal C\ =\ E-\operatorname{rank}(H_X)-\operatorname{rank}(H_Z)
+\ =\ \beta_1+(c-1)-\operatorname{rank}(H_Z),
+$$
+
 其中 $\beta_1:=E-V+c$ 为圈空间维数。**连通时**
-$$\boxed{\ k\ =\ \beta_1-\operatorname{rank}(H_Z)\ }$$
+
+$$
+\ k\ =\ \beta_1-\operatorname{rank}(H_Z)
+$$
 
 *证明.* CSS 码的码空间为 $\mathcal C=\{|\psi\rangle: X_v|\psi\rangle=|\psi\rangle,\ Z_f|\psi\rangle=|\psi\rangle\ \forall v,f\}$。
 
@@ -60,7 +72,10 @@ $$\boxed{\ k\ =\ \beta_1-\operatorname{rank}(H_Z)\ }$$
 
 **第二步（商掉 X 型稳定子）** $X$ 型约束再商去 $S_X=\operatorname{rowspace}(H_X)$。由于 $H_XH_Z^\top=0$，
 $S_X\subseteq\ker(H_Z)$（X 侧稳定子不破坏 Z 约束），故
-$$k=\dim\ker(H_Z)-\dim S_X=(E-\operatorname{rank}H_Z)-\operatorname{rank}H_X .$$
+
+$$
+k=\dim\ker(H_Z)-\dim S_X=(E-\operatorname{rank}H_Z)-\operatorname{rank}H_X .
+$$
 
 **第三步（对称性核验）** 同法从 X 侧出发得 $k=(E-\operatorname{rank}H_X)-\operatorname{rank}H_Z$，与上式相同（两者都是 $E-r_X-r_Z$），自洽。
 
@@ -69,14 +84,22 @@ $$k=\dim\ker(H_Z)-\dim S_X=(E-\operatorname{rank}H_Z)-\operatorname{rank}H_X .$$
 ### 推论 B.2（面独立时的特例）
 
 记 $\mathrm{rel}:=|F|-\operatorname{rank}(H_Z)$（面边界之间的独立关系数）。则
-$$k=\beta_1+(c-1)-|F|+\mathrm{rel}.$$
+
+$$
+k=\beta_1+(c-1)-|F|+\mathrm{rel}.
+$$
+
 若面边界**线性无关**（$\mathrm{rel}=0$）且 $K$ 连通：$k=\beta_1-|F|$。
 
 ### 定理 C（面边界关系数的解释）
 
 $\mathrm{rel}=\dim\ker\delta_F$，其中 $\delta_F:\mathbb F_2^F\to\mathbb F_2^E$ 为"面 $\mapsto$ 其边界边集之和"的线性映射。
 同理 $k=\dim\operatorname{coker}\delta_F$（连通时）。两者与圈空间的合成分解
-$$\mathbb F_2^E\ \supseteq\ Z_1=\ker\partial\ \ (\dim=\beta_1)$$
+
+$$
+\mathbb F_2^E\ \supseteq\ Z_1=\ker\partial\ \ (\dim=\beta_1)
+$$
+
 一致：$Z_1$ 中由面张成的部分是 $\operatorname{im}\delta_F$（$\dim=\operatorname{rank}H_Z$），余维数即 $k$。
 
 *证明.* $\ker\delta_F$ 恰是"面边界之和为零"的线性关系组，维数 $=|F|-\operatorname{rank}\delta_F=|F|-\operatorname{rank}(H_Z)=\mathrm{rel}$。

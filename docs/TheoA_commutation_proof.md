@@ -20,17 +20,28 @@ $K=(V,E,F)$ 为一个有限胞腔复形：
 > 一个满足零和 $\sum_i w_i=0$ 的闭合成边序列就是一个面（2-胞腔）。
 
 **定义 0.2（星形）** 对 $v\in V$，$v$ 的**星形**为
-$$\operatorname{star}(v)\ :=\ \{\,e\in E\ :\ v\in e\,\}\ \subseteq\ E .$$
+
+$$
+\operatorname{star}(v)\ :=\ \{\,e\in E\ :\ v\in e\,\}\ \subseteq\ E .
+$$
 
 **定义 0.3（重数）** 对 $v\neq w\in V$，记 $\mu(v,w)$ 为 $v,w$ 之间的边数（重边计重数）。
 
 **定义 0.4（希尔伯特空间与算子）**
 每条边 $e\in E$ 赋予**两个**量子比特，分别记为 $X_e$ 与 $Z_e$；总空间
-$$\mathcal H=\bigotimes_{e\in E}\Big(\mathbb C^2_{X_e}\otimes\mathbb C^2_{Z_e}\Big),\qquad
-\dim\mathcal H=2^{2|E|}.$$
+
+$$
+\mathcal H=\bigotimes_{e\in E}\Big(\mathbb C^2_{X_e}\otimes\mathbb C^2_{Z_e}\Big),\qquad
+\dim\mathcal H=2^{2|E|}.
+$$
+
 定义**顶点算符**与**面算符**
-$$A_v:=\prod_{e\in\operatorname{star}(v)}X_e,\qquad
-B_f:=\prod_{e\in\partial f}Z_e .$$
+
+$$
+A_v:=\prod_{e\in\operatorname{star}(v)}X_e,\qquad
+B_f:=\prod_{e\in\partial f}Z_e .
+$$
+
 （乘积按任意固定次序；下面证明它们良定义且两两对易。）
 
 **约定 0.5（Pauli 代数）**
@@ -39,8 +50,11 @@ B_f:=\prod_{e\in\partial f}Z_e .$$
 
 **引理 0.6（符号引理）**
 设 $S,T\subseteq E$，则
-$$\Big(\prod_{e\in S}X_e\Big)\Big(\prod_{e\in T}Z_e\Big)
-=(-1)^{|S\cap T|}\ \Big(\prod_{e\in T}Z_e\Big)\Big(\prod_{e\in S}X_e\Big).$$
+
+$$
+\Big(\prod_{e\in S}X_e\Big)\Big(\prod_{e\in T}Z_e\Big)
+=(-1)^{|S\cap T|}\ \Big(\prod_{e\in T}Z_e\Big)\Big(\prod_{e\in S}X_e\Big).
+$$
 
 *证明.* 逐个张量因子比较。对 $e\in S\cap T$：该因子上左边是 $X_eZ_e=-Z_eX_e$，贡献一个 $-1$；对 $e\in S\setminus T$（$X_e$ 与 $I$）或 $e\in T\setminus S$（$I$ 与 $Z_e$）：该因子上两算子有一个是恒等，故对易，贡献 $+1$；对 $e\notin S\cup T$：两个恒等。$|S\cap T|$ 个 $-1$ 相乘即得。$\square$
 
@@ -51,7 +65,10 @@ $$\Big(\prod_{e\in S}X_e\Big)\Big(\prod_{e\in T}Z_e\Big)
 ### 引理 1（同型对易）
 
 对一切 $v,w\in V$ 与 $f,g\in F$：
-$$[A_v,A_w]=0,\qquad [B_f,B_g]=0 .$$
+
+$$
+[A_v,A_w]=0,\qquad [B_f,B_g]=0 .
+$$
 
 *证明.* $A_v,A_w$ 都是 $\{X_e\}_{e\in E}$ 中算子的乘积，且每个 $X_e$ 只作用在第 $e$ 个边的 $X$ 比特上。
 若 $e\neq e'$，则 $X_e,X_{e'}$ 作用在不同量子比特上，由约定 0.5 对易；
@@ -61,7 +78,10 @@ $$[A_v,A_w]=0,\qquad [B_f,B_g]=0 .$$
 ### 引理 2（星形交集 = 边数）
 
 对一切 $v\neq w\in V$：
-$$\big|\operatorname{star}(v)\cap\operatorname{star}(w)\big|=\mu(v,w).$$
+
+$$
+\big|\operatorname{star}(v)\cap\operatorname{star}(w)\big|=\mu(v,w).
+$$
 
 *证明.* 由定义
 \operatorname{star}(v)\cap\operatorname{star}(w)=\{\,e\in E : v\in e 且 w\in e\,\}.
@@ -78,7 +98,10 @@ $$\big|\operatorname{star}(v)\cap\operatorname{star}(w)\big|=\mu(v,w).$$
 
 设 $f\in F$ 是**闭合词**（定义 0.1 的 Zero 面，即一条闭合边序列——这正是 Z0③ 零和所给出的对象）。
 则对一切 $v\in V$：
-$$\big|\operatorname{star}(v)\cap\partial f\big|\ =\ \deg_{\partial f}(v)\ \in\ \{0\}\cup 2\mathbb N .$$
+
+$$
+\big|\operatorname{star}(v)\cap\partial f\big|\ =\ \deg_{\partial f}(v)\ \in\ \{0\}\cup 2\mathbb N .
+$$
 
 特别地，若 $\partial f$ 是**简单圈**，则 $\deg_{\partial f}(v)\in\{0,2\}$。
 
@@ -86,7 +109,11 @@ $$\big|\operatorname{star}(v)\cap\partial f\big|\ =\ \deg_{\partial f}(v)\ \in\ 
 
 **第一步（交集 = 边界度数）**。
 一条边 $e$ 属于 $\operatorname{star}(v)$ 当且仅当 $v\in e$；故
-$$\operatorname{star}(v)\cap\partial f=\{\,e\in\partial f\ :\ v\in e\,\},$$
+
+$$
+\operatorname{star}(v)\cap\partial f=\{\,e\in\partial f\ :\ v\in e\,\},
+$$
+
 其元素个数逐条计数（重边重复计入）恰为 $v$ 在子（重）图 $\partial f$ 中的度数 $\deg_{\partial f}(v)$。$\square_{\text{step1}}$
 
 **第二步（闭合 ⇒ 度数全偶）**。
@@ -106,7 +133,10 @@ $$\operatorname{star}(v)\cap\partial f=\{\,e\in\partial f\ :\ v\in e\,\},$$
 > 故"**闭合**"（＝ Z0③ 的零和）是引理 3 的**必要结构**。
 
 **推论 3.1（一般对易）** 由引理 0.6 与引理 3，$s:=|\operatorname{star}(v)\cap\partial f|$ 为偶数，故
-$$A_vB_f=(-1)^{s}B_fA_v=B_fA_v .$$
+
+$$
+A_vB_f=(-1)^{s}B_fA_v=B_fA_v .
+$$
 
 **推论 3.2（$s$ 的界）** $\deg_{\partial f}(v)=0$ 或 $\ge2$；等号 $\deg=2$ 对所有 $v$ 成立当且仅当 $\partial f$ 为简单圈。
 对一般的闭合词（例如"8 字"），可出现 $\deg=4$（脚本 R4 核验：顶点 $0$ 的 $\deg=4$）——
@@ -123,10 +153,16 @@ $$A_vB_f=(-1)^{s}B_fA_v=B_fA_v .$$
 **(i)** 同型算符两两对易：$[A_v,A_w]=[B_f,B_g]=0$；
 
 **(ii)** 异型算符的对易符号为
-$$A_vB_f=(-1)^{\,|\operatorname{star}(v)\cap\partial f|}\,B_fA_v ;$$
+
+$$
+A_vB_f=(-1)^{\,|\operatorname{star}(v)\cap\partial f|}\,B_fA_v ;
+$$
 
 **(iii)** 从而 $A_vB_f=B_fA_v$ **恒成立**（对一切 $v\in V$、$f\in F$）。事实上由引理 3，$|\operatorname{star}(v)\cap\partial f|$ 恒为偶数，故符号 $(-1)^s=+1$。因此 $\{A_v\}\cup\{B_f\}$ 构成**两两对易**的算符族，生成一个良定义的稳定子群
-$$\mathcal S=\Big\langle\,A_v\ (v\in V),\ B_f\ (f\in F)\,\Big\rangle\ \subseteq\ \mathcal P_{2|E|} .$$
+
+$$
+\mathcal S=\Big\langle\,A_v\ (v\in V),\ B_f\ (f\in F)\,\Big\rangle\ \subseteq\ \mathcal P_{2|E|} .
+$$
 
 *证明.* (i) 即引理 1。(ii) 即引理 0.6（取 $S=\operatorname{star}(v)$、$T=\partial f$）。
 (iii) 由引理 3（无条件版），$|\operatorname{star}(v)\cap\partial f|\in\{0\}\cup2\mathbb N$ 恒为偶数，故符号为 $+1$，对易。
@@ -176,9 +212,9 @@ $K$ 的三个部件都有 Zero 出处：
 
 | # | 项 | 状态 |
 |--:|:--|:--|
-| 1 | $k=2E-(V-1)-F$（码的逻辑量子比特数闭式） | **未证**；目前是实测（需 $\operatorname{rank}\{A_v\}=V-1$、$\operatorname{rank}\{B_f\}=|F|$ 的证明） |
+| 1 | $k=2E-(V-1)-F$（码的逻辑量子比特数闭式） | **未证**；目前是实测（需 $\operatorname{rank}\{A_v\}=V-1$、$\operatorname{rank}\{B_f\}=\lvert F \rvert$ 的证明） |
 | 3 | 距离 $d$ 与 girth／最小割的精确关系 | **未证**；仅小例实测 |
-| 4 | 自环（$e=(v,v)$）的处理 | 本文件排除自环；若允许，$A_v$ 中 $X_e$ 出现一次，引理 2 的表述需调整 | 未处理 |
+| 4 | 自环（$e=(v,v)$）的处理 | **未处理**；本文件排除自环，若允许，$A_v$ 中 $X_e$ 出现一次，引理 2 的表述需调整 |
 | 5 | 生成元的**独立性**（是否有冗余关系） | 未证；推论 A.1 只保证群良定义，不保证秩 |
 
 ---
@@ -189,6 +225,6 @@ $K$ 的三个部件都有 Zero 出处：
 |:--|:--|:--|
 | v1（`zero_theorem_a_euler_commute.py`） | "对易 $\iff$ 图欧拉（顶点度数全偶）" | **撤回**：该构造把 $X,Z$ 都放顶点，由推论 2.1 在简单图上相邻顶点即反对易 ⇒ 构造本身非法 |
 | v2（`zero_theorem_a_fixed.py`） | 推测"开边界会产生反对易对" | **撤回**：实测异型反对易对 $=0$；引理 3 给出原因 |
-| v3（本文件） | 引理 1–3 ＋ 定理 A：判据是 $|\operatorname{star}(v)\cap\partial f|$ 为偶，**对一切闭合词恒成立**（无条件） | **本版** |
+| v3（本文件） | 引理 1–3 ＋ 定理 A：判据是 $\lvert \operatorname{star}(v)\cap\partial f \rvert$ 为偶，**对一切闭合词恒成立**（无条件） | **本版** |
 | 实现 | 矩阵表示（$2^{2E}$ 维） | **废弃**：3×3 环面 $4.7\times10^{21}$ 元素，实测占 43% 内存、64 min CPU 未完成 |
 | 实现 | GF(2) 辛向量 | **采用**：同任务 0.14 秒 |

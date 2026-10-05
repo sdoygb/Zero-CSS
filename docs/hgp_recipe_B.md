@@ -20,8 +20,8 @@
 | **B（HGP）** | 取**两个图**的乘积检查 | $k=\beta_1(G_1)\beta_1(G_2)+1$ ⇒ **$k\propto n$** |
 
 $$
-\boxed{\ \text{"局域} \Longleftrightarrow \text{低码率"}\ \textbf{撤回};\quad
-\text{局域 + 高码率可以同时达到（配方 B）}\ }
+\ \text{"局域} \Longleftrightarrow \text{低码率"}\ \textbf{撤回};\quad
+\text{局域 + 高码率可以同时达到（配方 B）}
 $$
 
 **诊断的关键一步**：定度图的 $\beta_1/E$ 与环面**一样是常数**（$1-1/d$）：
@@ -33,7 +33,9 @@ $$
 | 6-正则 | 1600 | 4800 | 3201 | 0.667 |
 | 环面 $L\times L$ | $L^2$ | $2L^2$ | $2L^2-L^2+1$ | $\to0.5$ |
 
-$$\Longrightarrow\ \text{差别}\ \textbf{不在图}，\text{而在}\ \textbf{配方}（\text{面吃掉了多少}\ \beta_1）$$
+$$
+\Longrightarrow\ \text{差别}\ \textbf{不在图}，\text{而在}\ \textbf{配方}（\text{面吃掉了多少}\ \beta_1）
+$$
 
 ---
 
@@ -41,10 +43,14 @@ $$\Longrightarrow\ \text{差别}\ \textbf{不在图}，\text{而在}\ \textbf{�
 
 取两个图 $G_1=(V_1,E_1)$、$G_2=(V_2,E_2)$，$H_i$ 为各自关联矩阵：
 
-$$H_X=[\,H_1\otimes I_{E_2}\ \mid\ I_{V_1}\otimes H_2^\top\,],\qquad
-H_Z=[\,I_{E_1}\otimes H_2\ \mid\ H_1^\top\otimes I_{V_2}\,]$$
+$$
+H_X=[\,H_1\otimes I_{E_2}\ \mid\ I_{V_1}\otimes H_2^\top\,],\qquad
+H_Z=[\,I_{E_1}\otimes H_2\ \mid\ H_1^\top\otimes I_{V_2}\,]
+$$
 
-$$n=E_1V_2+V_1E_2,\qquad k=\beta_1(G_1)\cdot\beta_1(G_2)+1$$
+$$
+n=E_1V_2+V_1E_2,\qquad k=\beta_1(G_1)\cdot\beta_1(G_2)+1
+$$
 
 **Zero 依据**：只需两个图（顶点/边来自 Z0 的 $(C,E)$）；检查是**局域**的；
 对易条件 $H_XH_Z^\top=0$ 由构造自动成立。
@@ -79,7 +85,9 @@ $$n=E_1V_2+V_1E_2,\qquad k=\beta_1(G_1)\cdot\beta_1(G_2)+1$$
 
 ### 2.1 公式
 
-$$\boxed{\ d\ =\ \min\big(\mathrm{girth}(G_1),\ \mathrm{girth}(G_2)\big)\ }$$
+$$
+\ d\ =\ \min\big(\mathrm{girth}(G_1),\ \mathrm{girth}(G_2)\big)
+$$
 
 **机制**：HGP 的 X 型逻辑是"$G_1$ 的圈 ⊗ $G_2$ 的圈"型张量结构，
 故最小重量 = 两图**最短圈**的较小者。
@@ -108,7 +116,9 @@ $$\boxed{\ d\ =\ \min\big(\mathrm{girth}(G_1),\ \mathrm{girth}(G_2)\big)\ }$$
 
 随机 $d$-正则图的 girth 是 $\Theta(\log V)$，而 $n\propto V^2$（HGP 同位），故
 
-$$d\ \sim\ \log n\ \Longrightarrow\ \frac{d}{\sqrt n}\ \to\ 0$$
+$$
+d\ \sim\ \log n\ \Longrightarrow\ \frac{d}{\sqrt n}\ \to\ 0
+$$
 
 **这是 HGP 的固有限制**——要 $\sqrt n$ 级距离需其他量子 LDPC 构造（fiber bundle 等）。
 
@@ -123,8 +133,8 @@ $$d\ \sim\ \log n\ \Longrightarrow\ \frac{d}{\sqrt n}\ \to\ 0$$
 | **AG：RM(3,10)** | 1024 | 672 | **0.656** | **16** | **0.500** | $8\ldots2^m$ | ✗ | ✗ |
 
 $$
-\boxed{\ \textbf{没有一方全面占优}:\quad
-\text{HGP 率高距离低};\quad \text{AG 率更高且距离好，但非局域}\ }
+\ \textbf{没有一方全面占优}:\quad
+\text{HGP 率高距离低};\quad \text{AG 率更高且距离好，但非局域}
 $$
 
 ---
@@ -139,8 +149,8 @@ $$
 | AG/RM（对照） | 0.656 | 常数（8, 16） | $8\ldots2^m$（**指数**） | ✗ |
 
 $$
-\boxed{\ \text{配方 B 把"Zero 原生 + 常数检查权重"下的码率从} \to0\ \text{提到}\ \textbf{0.23–0.67};\
-\text{但距离只有}\ \log n\ \text{级}\ }
+\ \text{配方 B 把"Zero 原生 + 常数检查权重"下的码率从} \to0\ \text{提到}\ \textbf{0.23–0.67};
+\text{但距离只有}\ \log n\ \text{级}
 $$
 
 **AG 剩下的优势**：距离（16 vs 3）与 $d/\sqrt n$（0.500 vs 0.094）。
@@ -166,7 +176,6 @@ $$
 ## 5 结论
 
 $$
-\boxed{\
 \begin{aligned}
 &\text{(i)}\ \text{配方 A（边/顶点/面）} \Rightarrow k=O(1) \Rightarrow \text{码率} \to 0;\\[2pt]
 &\text{(ii)}\ \textbf{配方 B（HGP）} \Rightarrow k=\beta_1(G_1)\beta_1(G_2)+1 \Rightarrow
@@ -174,7 +183,7 @@ k/n\ \text{可达}\ 0.23\text{–}0.67;\\[2pt]
 &\text{(iii)}\ \text{配方 B 的距离} = \min(\mathrm{girth}_1,\mathrm{girth}_2)\sim\log n;\\[2pt]
 &\text{(iv)}\ \text{两者都}\ \textbf{Zero 原生}、\text{检查权重都是常数（局域）};\\[2pt]
 &\text{(v)}\ \text{AG 仍以距离取胜（16 vs 3），但代价是}\ \textbf{指数级检查权重}（\text{非局域}）.
-\end{aligned}}
+\end{aligned}
 $$
 
 **用户的直觉正确**：不是"局域必须低码率"，而是我一直在用**一种**配方。
