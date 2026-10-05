@@ -23,7 +23,7 @@ Zero 的原语是零和＋局域补偿移动＋循环次序。两者混放会**�
 
 | 文件 | 作用 | 依赖 |
 |:--|:--|:--|
-| `scripts/zero_native_code.py` | 零和 ⇒ 圈空间；$[[E,\beta\_1,\text{girth}]]$ 参数表；边按方向分组 ⇒ CSS 对易判据 | numpy |
+| `scripts/zero_native_code.py` | 零和 ⇒ 圈空间；$\llbracket E,\beta\_1,\text{girth} \rrbracket$ 参数表；边按方向分组 ⇒ CSS 对易判据 | numpy |
 | `scripts/zero_quantum_cycle_code.py` | 量子圈码（顶点星形 X/Z ＋ 面）；实测 $n,k,d$ | numpy |
 | `scripts/zero_layer_qec_profile.py` | **四层 ＋ 读出面的纠错画像**（L0／L1／L1′／L2／$\mathcal R$） | numpy |
 | `scripts/zero_layers_vs_code.py` | 分层 ↔ 码结构对应（稳定子／syndrome／MWD 各在哪层） | numpy |
@@ -64,7 +64,7 @@ $$
 \text{零和}\ \textstyle\sum w_i=0\ \Longrightarrow\ \text{圈空间}\ \Longrightarrow\ [[\,E,\ \beta_1=E-V+1,\ \text{girth}\,]]
 $$
 
-$K\_4\to[[6,3,3]]$；$C\_n\to[[n,1,n]]$；环面 $3\times3\to$ 见下。
+$K\_4\to\llbracket 6,3,3 \rrbracket$；$C\_n\to\llbracket n,1,n \rrbracket$；环面 $3\times3\to$ 见下。
 
 ### 2.2 Zero 原生给出**量子**码的前提
 

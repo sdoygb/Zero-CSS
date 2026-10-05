@@ -170,4 +170,4 @@ d_X=(最短非平凡圈长)=girth=L,\qquad d_Z=(最小分离割)=L,\qquad d=L .
 
 k=E-r_X-r_Z=\beta_1-\mathrm{rank}(H_Z)　(连通，已证).
 
-**(iii)** 环面胞腔化 $\Rightarrow[[2L^2,2,L]]$（toric code）；平面胞腔化 $\Rightarrow k=0$。
+**(iii)** 环面胞腔化 $\Rightarrow\llbracket 2L^2,2,L \rrbracket$（toric code）；平面胞腔化 $\Rightarrow k=0$。

@@ -122,6 +122,27 @@ def e6_bare_underscore(lines):
     return out
 
 
+def e7_bracket_clash(lines):
+    """行内 $...$ 中的 [[ / ]] / \\[ / \\] 会与 $ 的配对冲突，导致公式不渲染。
+
+    - ``[[`` / ``]]``：GitHub 的行内数学扫描器会被方括号干扰
+    - ``\\[`` / ``\\]``：本身是 LaTeX 的**显示数学定界符**
+    双括号请写 ``\\llbracket ... \\rrbracket``（或 ``[\\![ ... ]\\!]``）。
+    """
+    out = []
+    for i, l in enumerate(lines, 1):
+        dd = [(m.start(), m.end()) for m in re.finditer(r"\$\$.+?\$\$", l)]
+        for m in re.finditer(r"(?<!\$)\$([^$\n]+)\$(?!\$)", l):
+            if any(a <= m.start() < b for a, b in dd):
+                continue
+            seg = m.group(1)
+            for pat in ("[[", "]]", r"\[", r"\]"):
+                if pat in seg:
+                    out.append((i, "%s 出现在行内公式: %s" % (pat, seg.strip()[:55])))
+                    break
+    return out
+
+
 def e5_table_columns(lines):
     """表格每行的 | 数必须一致（否则该行会被解析成额外列）。"""
     out = []
@@ -153,15 +174,17 @@ def main():
     for f in FILES:
         text = read(f)
         lines = text.split("\n")
-        r1, r2, r3, r4, r5, r6 = (
+        r1, r2, r3, r4, r5, r6, r7_holder = (
             e1_stuck_display(lines),
             e2_table_pipe(lines),
             e3_boxed(lines),
             e4_control_chars(text),
             e5_table_columns(lines),
             e6_bare_underscore(lines),
+            e7_bracket_clash(lines),
         )
-        n = len(r1) + len(r2) + len(r3) + len(r4) + len(r5) + len(r6)
+        r7 = r7_holder
+        n = len(r1) + len(r2) + len(r3) + len(r4) + len(r5) + len(r6) + len(r7)
         total += n
         status = "OK" if n == 0 else "%d 处问题" % n
         print("\n%-46s %s" % (f, status))
@@ -177,6 +200,8 @@ def main():
             print("   E5 L%-4d 表格列数不一致: %s" % (ln, txt))
         for ln, txt in r6:
             print("   E6 L%-4d 行内公式含裸 _（会被 Markdown 吃掉）: %s" % (ln, txt))
+        for ln, txt in r7:
+            print("   E7 L%-4d 行内公式含方括号冲突: %s" % (ln, txt))
     print("\n" + "=" * 78)
     print("合计问题: %d" % total)
     if total:
